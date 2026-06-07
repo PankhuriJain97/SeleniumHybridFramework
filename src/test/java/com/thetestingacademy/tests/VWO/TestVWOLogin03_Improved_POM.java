@@ -16,7 +16,7 @@ public class TestVWOLogin03_Improved_POM {
     @Description("Invalid Login")
     public void invalid_login() {
         WebDriver driver = new ChromeDriver();
-        driver.get("https://app.vwo.com");
+        driver.get(PropertiesReader.readKey("url"));
 
         LoginPage loginPage = new LoginPage(driver);
         String error_msg = loginPage.Login_invalid(PropertiesReader.readKey("invalid_username"), PropertiesReader.readKey("invalid_password"));
