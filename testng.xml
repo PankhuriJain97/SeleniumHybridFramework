@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:/Selenium_projects/SeleniumHybridFramework">
+    <test verbose="2" preserve-order="true"
+          name="D:/Selenium_projects/SeleniumHybridFramework/src/test/java/com/thetestingacademy/tests/VWO/TestVWOLogin03_Improved_POM.java">
         <classes>
-            <class name="com.thetestingacademy.tests.VWO.TestVWOLogin02_with_POM">
+            <class name="com.thetestingacademy.tests.VWO.TestVWOLogin03_Improved_POM">
                 <methods>
-                    <include name="login_invalid"/>
-                    <include name="login_valid"/>
+                    <include name="invalid_login"/>
                 </methods>
             </class>
         </classes>

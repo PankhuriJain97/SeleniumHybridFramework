@@ -1,10 +1,13 @@
 package com.thetestingacademy.pages.POM.VWO;
 
+import com.thetestingacademy.base.CommonToAll;
 import com.thetestingacademy.utils.WaitHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+import static com.thetestingacademy.driver.DriverManager.getDriver;
+
+public class LoginPage extends CommonToAll {
     /* PAGE CLASS*/
 
     WebDriver driver;
@@ -30,22 +33,31 @@ public class LoginPage {
 
     public String Login_invalid(String usr, String pwd)
     {
-        driver.findElement(username).sendKeys(usr);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signButton).click();
+//        driver.findElement(username).sendKeys(usr);
+//        driver.findElement(password).sendKeys(pwd);
+        openVWOUrl();
+        enterValue(username,usr);
+        enterValue(password,pwd);
 
-        WaitHelpers.checkVisibility(driver, error_message);
+        //driver.findElement(signButton).click();
+        clickElement(signButton);
+        WaitHelpers.checkVisibility(getDriver(), error_message);
 
-        String error_msg = driver.findElement(error_message).getText();
+        //String error_msg = driver.findElement(error_message).getText();
+        String error_msg = getText(error_message);
 
         return error_msg;
     }
 
     public void Login_valid(String usr, String pwd)
     {
-        driver.findElement(username).sendKeys(usr);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signButton).click();
+//        driver.findElement(username).sendKeys(usr);
+//        driver.findElement(password).sendKeys(pwd);
+//        driver.findElement(signButton).click();
+        openVWOUrl();
+        enterValue(username,usr);
+        enterValue(password,pwd);
+        clickElement(signButton);
 
     }
 

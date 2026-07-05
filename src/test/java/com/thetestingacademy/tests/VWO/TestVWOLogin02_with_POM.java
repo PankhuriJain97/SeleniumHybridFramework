@@ -1,6 +1,6 @@
 package com.thetestingacademy.tests.VWO;
 
-import com.thetestingacademy.pages.POM.VWO.DashboardPage;
+import com.thetestingacademy.pages.POM.VWO.DashBoardPage;
 import com.thetestingacademy.pages.POM.VWO.LoginPage;
 import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
@@ -50,8 +50,8 @@ public class TestVWOLogin02_with_POM {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.Login_valid("neyiyos395@aspensif.com","Automation@123");
 
-        DashboardPage dashboardPage = new DashboardPage(driver);
-        String name = dashboardPage.UserLoggedIn();
+        DashBoardPage dashboardPage = new DashBoardPage(driver);
+        String name = dashboardPage.loggedInUserName();
 
         assertThat(name).isNotBlank().isNotNull().isNotEmpty();
         Assert.assertEquals(name,"Automation Testing");
