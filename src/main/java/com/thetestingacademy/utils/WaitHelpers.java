@@ -41,6 +41,11 @@ public class WaitHelpers {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    public static void checkVisibility(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public static void checkVisibilityOfAndTextToBePresentInElement(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -75,7 +80,7 @@ public class WaitHelpers {
     }
 
     public static WebElement visibilityOfElement(By elementLocation) {
-        return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(50)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
     }
     public static WebElement visibilityOfElement(WebElement elementLocation) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(elementLocation));
